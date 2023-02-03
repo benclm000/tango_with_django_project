@@ -3,7 +3,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Rango says hey there partner! Go to the about page with http://127.0.0.1:8000/rango/about")
-    
+    context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
+    return render(request, 'rango/index.html', context=context_dict)
 def about(request):
-    return HttpResponse("Rango says here is the about page. Go back to the main page with http://127.0.0.1:8000/rango/")
+    return render(request, 'rango/about.html')
+def friend(request):
+    context_dict = {'strikethroughmessage': 'yaaaaaaaawn blep'}
+    return render(request, 'rango/friend.html', context=context_dict)
+ 
