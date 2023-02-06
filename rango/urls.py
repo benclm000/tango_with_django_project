@@ -7,6 +7,6 @@ app_name = 'rango'
 
 urlpatterns = [
 	path('', views.index, name='index'),
-    path('about', views.about, name='about'),
-    path('friend', views.friend, name='friend'),
+    path('about/', views.about, name='about'),
+    path('friend/', views.friend, name='friend'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
